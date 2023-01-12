@@ -138,7 +138,8 @@ def station_stats(df):
 
 
 def trip_duration_stats(df):
-    """Displays statistics on the total and average trip duration."""
+    """Displays statistics on the total and average trip duration. Also calls days_hours_minutes() function
+    to turn seconds into hours minutes seconds"""
 
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
