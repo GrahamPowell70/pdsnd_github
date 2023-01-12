@@ -32,7 +32,8 @@ def get_filters():
     # get user input for month (all, january, february, ... , june)
     month = input('Please enter month of interest or all (January to June): ').lower()
     #month = ez.enterbox('Please enter month of interest or all', title='month entry', default='All').lower()
-    while month not in ['all', 'january', 'february', 'march', 'april', 'may', 'june']:
+    months = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
+    while month not in months:
         print('Invalid month name ')
         #month = ez.enterbox('Please enter month of interest or all', title='month entry', default='All').lower()
         month = input('Please enter month of interest or all (January to June): ').lower()
@@ -150,7 +151,7 @@ def trip_duration_stats(df):
 
     # display total travel time
     total_time = df['Trip Duration'].sum()
-    hours, minutes, seconds = days_hours_minutes(total_time)
+    hours, minutes, seconds = hours_minutes_seconds(total_time)
 
 
     print('Total time for all journeys = {:.2f} seconds'.format(total_time) )
@@ -165,7 +166,7 @@ def trip_duration_stats(df):
     print("\nThis calculation took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-def days_hours_minutes(time_in_s):
+def hours_minutes_seconds(time_in_s):
 
     """Just returns hours, minutes and seconds from a number of seconds"""
     hours = int(time_in_s/3600)
