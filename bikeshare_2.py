@@ -32,7 +32,8 @@ def get_filters():
     # get user input for month (all, january, february, ... , june)
     month = input('Please enter month of interest or all (January to June): ').lower()
     #month = ez.enterbox('Please enter month of interest or all', title='month entry', default='All').lower()
-    while month not in ['all', 'january', 'february', 'march', 'april', 'may', 'june']:
+    months = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
+    while month not in months:
         print('Invalid month name ')
         #month = ez.enterbox('Please enter month of interest or all', title='month entry', default='All').lower()
         month = input('Please enter month of interest or all (January to June): ').lower()
