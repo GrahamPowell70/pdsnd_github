@@ -149,7 +149,7 @@ def trip_duration_stats(df):
 
     # display total travel time
     total_time = df['Trip Duration'].sum()
-    hours, minutes, seconds = days_hours_minutes(total_time)
+    hours, minutes, seconds = hours_minutes_seconds(total_time)
 
 
     print('Total time for all journeys = {:.2f} seconds'.format(total_time) )
@@ -164,7 +164,7 @@ def trip_duration_stats(df):
     print("\nThis calculation took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-def days_hours_minutes(time_in_s):
+def hours_minutes_seconds(time_in_s):
 
     """Just returns hours, minutes and seconds from a number of seconds"""
     hours = int(time_in_s/3600)
